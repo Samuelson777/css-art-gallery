@@ -1,0 +1,140 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa; /* Light blue background */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #00796b; /* Dark teal color */
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation for header */
+}
+
+p {
+    color: #555;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.art-piece {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeIn 0.5s forwards; /* Fade-in animation for art pieces */
+}
+
+.art-piece:hover {
+    transform: scale(1.05) rotate(2deg); /* Slight rotation on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.piece1 {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+.piece2 {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.piece3 {
+    background: #ff6a6a;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.piece4 {
+    background: #00c6ff;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border-radius: 50%;
+}
+
+.piece5 {
+    background: #ffcc00;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.piece6 {
+    background: #4caf50;
+    clip-path: ellipse(50% 30% at 50% 50%);
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeIn 0.5s forwards; /* Fade-in animation for lightbox */
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-description {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2em;
+    animation: slideIn 0.5s ease-in-out; /* Slide-in animation for description */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close:hover {
+    transform: scale(1.2); /* Scale effect on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
