@@ -20,3 +20,6 @@ You can view the live application at: [CSS Art Gallery App](https://samuelson777
 - HTML
 - CSS
 - JavaScript
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Samuelson777/css-art-gallery/blob/main/LICENSE) file for details.
